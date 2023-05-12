@@ -106,6 +106,36 @@ function App() {
                 </div>
               </DescWithImage>
             </Row>
+            <TextDevider textSymbol=">" label="Personal Projects" />
+            <Row style={{ marginTop: "18px" }}>
+              <ProjectDisplay
+                title="Language adapter"
+                skills={["React", "NodeJS", "PM2", "Express.js", "MariaDB"]}
+                desc="The Language Adapter Project originated from my personal journey of learning English. During conversations, I often found myself struggling to express my thoughts using English phrases, resorting to Korean-style expressions instead. Realizing the need to bridge this gap, I embarked on this project to develop a comprehensive solution."
+                VisualComponent={
+                  <div className="vimeo__wrapper">
+                    <iframe
+                      src="https://player.vimeo.com/video/823845422?h=6531fc52d4&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                      frameBborder="0"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowFullScreen
+                      style={{
+                        position: "absolute",
+                        top: "0",
+                        left: "0",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                      title="langauge_adapter"
+                    ></iframe>
+                  </div>
+                }
+                links={[
+                  "https://github.com/jimyeong/language_adapter_client",
+                  "https://github.com/jimyeong/language_adapter_server",
+                ]}
+              />
+            </Row>
             <TextDevider textSymbol=">" label="Animations" />
             <Row>
               <iframe
@@ -167,7 +197,7 @@ function App() {
                 VisualComponent={
                   <iframe
                     style={{ width: "100%" }}
-                    height="315"
+                    height="415"
                     src="https://www.youtube.com/embed/hnPAhCk147s"
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -191,7 +221,16 @@ function App() {
                 ]}
                 title="Updang"
                 desc="University students often face difficulties in obtaining loans from banks due to their lack of credit history. This project originated from the idea of exploring alternative approaches to credit evaluation for university students. This application gathers information on financial events and promotions available in the financial sector, specifically targeted towards university students. It also provides insights into which banks offer loans, the interest rates involved, and the maximum loan amounts that students can obtain. The application serves as a platform to empower university students by facilitating their access to financial resources and enhancing their understanding of available loan options."
-                VisualComponent={<AnimationDisplay imgSrc={Updang} />}
+                VisualComponent={
+                  <iframe
+                    style={{ width: "100%" }}
+                    height="415"
+                    src="https://www.youtube.com/embed/aHOPJZgTfRk"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                }
                 links={[
                   "https://play.google.com/store/apps/details?id=com.crepassplus.updang&hl=en&gl=US",
                   "https://apps.apple.com/kr/app/up%EB%8B%B9/id1556052269?utm_source=homepage&utm_medium=button",
@@ -261,36 +300,7 @@ function App() {
             </Row>
 
             <TextDevider textSymbol=">" label="Backend Projects" />
-            <TextDevider textSymbol=">" label="Personal Projects" />
-            <Row style={{ marginTop: "18px" }}>
-              <ProjectDisplay
-                title="Language adapter"
-                skills={["React", "NodeJS", "PM2", "Express.js", "MariaDB"]}
-                desc="The Language Adapter Project originated from my personal journey of learning English. During conversations, I often found myself struggling to express my thoughts using English phrases, resorting to Korean-style expressions instead. Realizing the need to bridge this gap, I embarked on this project to develop a comprehensive solution."
-                VisualComponent={
-                  <div className="vimeo__wrapper">
-                    <iframe
-                      src="https://player.vimeo.com/video/823845422?h=6531fc52d4&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                      frameBborder="0"
-                      allow="autoplay; fullscreen; picture-in-picture"
-                      allowFullScreen
-                      style={{
-                        position: "absolute",
-                        top: "0",
-                        left: "0",
-                        width: "100%",
-                        height: "100%",
-                      }}
-                      title="langauge_adapter"
-                    ></iframe>
-                  </div>
-                }
-                links={[
-                  "https://github.com/jimyeong/language_adapter_client",
-                  "https://github.com/jimyeong/language_adapter_server",
-                ]}
-              />
-            </Row>
+
             <TextDevider textSymbol=">" label="Problem Solving" />
             <Row style={{ marginTop: "16px" }}>
               <span>
