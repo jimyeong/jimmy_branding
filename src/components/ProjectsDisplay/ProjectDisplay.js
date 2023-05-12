@@ -17,16 +17,17 @@ function ProjectDisplay({ VisualComponent, title, desc, skills, links = [] }) {
   return (
     <ProjectDisplayBlock>
       {VisualComponent}
-      <h3>Title: {title}</h3>
+      {title && <h3>Title: {title}</h3>}
       <p>{desc}</p>
       <div className="skills__container">
-        <span className="skills_label">skills: </span>
-        {skills.map((item, i) =>
-          item == skills[skills.length - 1] ? ` ${item}` : ` ${item} |`
-        )}
+        {skills.length > 0 && <span className="skills_label">skills: </span>}
+        {skills.length > 0 &&
+          skills.map((item, i) =>
+            item == skills[skills.length - 1] ? ` ${item}` : ` ${item} |`
+          )}
       </div>
       <div>
-        Link:{" "}
+        {links.length > 0 && <span>Link: </span>}
         {links.length > 0 &&
           links.map((link, idx) => (
             <div key={idx}>

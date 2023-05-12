@@ -139,7 +139,7 @@ function App() {
             <TextDevider textSymbol=">" label="Animations" />
             <Row>
               <iframe
-                height="300"
+                height="415"
                 style={{ width: "100%" }}
                 title="pixelizing"
                 src="https://codepen.io/idjjm92/embed/preview/VwdgpMj?default-tab=&theme-id=dark"
@@ -155,7 +155,7 @@ function App() {
 
             <Row style={{ marginTop: "18px", paddingBottom: "16px" }}>
               <iframe
-                height="300"
+                height="415"
                 style={{ width: "100%" }}
                 title="pixelizing"
                 src="https://codepen.io/idjjm92/embed/preview/QWxvxZB?default-tab=&theme-id=dark"
@@ -205,6 +205,23 @@ function App() {
                   ></iframe>
                 }
                 links={["http://www.link2you.org/"]}
+              />
+            </Row>
+
+            <Row style={{ marginTop: "18px" }}>
+              <ProjectDisplay
+                skills={[]}
+                links={[]}
+                VisualComponent={
+                  <iframe
+                    style={{ width: "100%" }}
+                    height="415"
+                    src="https://www.youtube.com/embed/lOpW--VTrX0"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullscreen
+                  ></iframe>
+                }
               />
             </Row>
 
