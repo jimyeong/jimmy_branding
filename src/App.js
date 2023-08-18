@@ -106,6 +106,7 @@ function App() {
                 </div>
               </DescWithImage>
             </Row>
+
             <TextDevider textSymbol=">" label="Personal Projects" />
             <Row style={{ marginTop: "18px" }}>
               <ProjectDisplay
@@ -134,6 +135,34 @@ function App() {
                   "https://github.com/jimyeong/language_adapter_client",
                   "https://github.com/jimyeong/language_adapter_server",
                 ]}
+              />
+            </Row>
+
+            <TextDevider textSymbol=">" label="Testing" />
+            <Row style={{ marginTop: "18px" }}>
+              <ProjectDisplay
+                title="Testing in Jest"
+                skills={["React", "Typescript", "Redux", "Jest"]}
+                desc="The bigger a team grows, the more the code needs to be tested in code, so out of curiosity to learn Jest, I made a small application and added a testing process."
+                VisualComponent={
+                  <div className="vimeo__wrapper">
+                    <iframe
+                      src="https://www.youtube.com/embed/_MBFXIL2KqE"
+                      frameBborder="0"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowFullScreen
+                      style={{
+                        position: "absolute",
+                        top: "0",
+                        left: "0",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                      title="langauge_adapter"
+                    ></iframe>
+                  </div>
+                }
+                links={["https://github.com/jimyeong/redux_ts_testing"]}
               />
             </Row>
             <TextDevider textSymbol=">" label="Animations" />
