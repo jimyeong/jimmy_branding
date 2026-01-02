@@ -60,6 +60,16 @@ const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
     }
+
+    /* Slick Carousel Custom Styles */
+    .slick-prev:before,
+    .slick-next:before {
+        color: #0066cc !important;
+    }
+
+    .slick-dots li button:before {
+        font-size: 12px !important;
+    }
 `;
 
 export default GlobalStyle;

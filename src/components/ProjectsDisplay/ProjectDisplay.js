@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import MediaCarousel from "../MediaCarousel/MediaCarousel";
 
 const ProjectDisplayBlock = styled.div`
   padding: 32px;
@@ -74,10 +75,20 @@ const ProjectDisplayBlock = styled.div`
   }
 `;
 
-function ProjectDisplay({ VisualComponent, title, desc, skills = [], links = [] }) {
+function ProjectDisplay({
+  VisualComponent,
+  media = [],
+  title,
+  desc,
+  skills = [],
+  links = []
+}) {
+  // Support both old VisualComponent prop and new media array prop
+  const mediaItems = media.length > 0 ? media : (VisualComponent ? [VisualComponent] : []);
+
   return (
     <ProjectDisplayBlock>
-      {VisualComponent}
+      {mediaItems.length > 0 && <MediaCarousel media={mediaItems} />}
       {title && <h3>{title}</h3>}
       {desc && <p>{desc}</p>}
       {skills.length > 0 && (
