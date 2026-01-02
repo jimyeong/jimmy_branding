@@ -18,7 +18,7 @@ import MediaCarousel from "./components/MediaCarousel/MediaCarousel";
 import OwlverloadAnalyticsImage1 from "./assets/imgs/1_stock_management.jpg";
 import OwlverloadAnalyticsImage2 from "./assets/imgs/2_stock_management.jpg";
 import OwlverloadAnalyticsImage3 from "./assets/imgs/3_stock_management.jpg";
-
+import IframeWrapper from "./components/IframeWrapper";
 const AppUIBlock = styled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -52,7 +52,7 @@ const owlverloadAnalyticsVideo = "https://www.youtube.com/embed/rqJM1f8N0YM?si=z
 
 
 const OwlverloadAnalyticsVideoComponent = () => {
-  return (<iframe width="50" height="450" src={owlverloadAnalyticsVideo} title="owlverload_analytics" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  return (<IframeWrapper src={owlverloadAnalyticsVideo} title="owlverload_analytics" />
   )
 }
 
@@ -129,9 +129,12 @@ function App() {
             <ProjectDisplay
               title="Owlverload Analytics"
               skills={["React Native", "Mux", "Go", "Typescript", "MariaDB", "Cloudflare R2", "Google Auth2.0", "Redis", "Lua script"]}
-              desc="Owlverload Analytics was born from a real operational problem I experienced while working on the shop floor of a supermarket. Despite the rapid advances in AI and software tools, I noticed that many day-to-day retail operations were still being handled in highly manual, traditional ways. One recurring issue was expiry-date management. With hundreds of products, each expiring on different days, checking everything manually every day was both time-consuming and error-prone. 
-              Seeing large amounts of perfectly usable stock being discarded due to missed expiry dates made me question whether software could reduce that burden. Owlverload Analytics was built to explore how lightweight data tracking and analytics could help frontline workers make better decisions, reduce waste, and manage stock more effectively. 
-              The project focuses on bridging the gap between real-world operational constraints and practical software solutions, shaped directly by on-the-ground experience rather than abstract assumptions."
+              desc={`Owlverload Analytics was born from a real operational problem I experienced while working on the shop floor of a supermarket.
+              Despite the rapid advances in AI and software tools, I noticed that many day-to-day retail operations were still being handled in highly manual, traditional ways. 
+              One recurring issue was expiry-date management. With hundreds of products, each expiring on different days, checking everything manually every day was both time-consuming and error-prone. 
+              Seeing large amounts of perfectly usable stock being discarded due to missed expiry dates made me question whether software could reduce that burden. 
+              Owlverload Analytics was built to explore how lightweight data tracking and analytics could help frontline workers make better decisions, reduce waste, and manage stock more effectively. 
+              The project focuses on bridging the gap between real-world operational constraints and practical software solutions, shaped directly by on-the-ground experience rather than abstract assumptions.`}
 
               VisualComponent={<MediaCarousel media={
                 [<OwlverloadAnalyticsVideoComponent />
@@ -151,40 +154,37 @@ function App() {
                 "CentOS",
               ]}
               title="Link2You"
-              desc="This project aims to assist orphaned children who, upon reaching the age of 17, are legally required to leave their care facility. However, they often face challenges adapting to society due to a lack of role models. Our objective is to connect them with mentors who are accomplished professionals in their fields, providing guidance and inspiration. Through educational videos, they can ask questions and gain financial knowledge. Eligible participants also receive subsidized support. Our goal is to empower these young individuals, helping them transition into responsible adulthood successfully."
+              desc={`Implemented a real-time messaging system using Node.js, Socket.IO, JWT-based authentication, and a React frontend.
+                Built login/logout presence indicators and role-aware notifications between mentors and mentees. 
+                When a mentor logs in, a real-time notification is delivered to t he connected mentee client. 
+                Also implemented a video-based learning flow for mentees, including attention-check quizzes embedded within videos. Quiz responses are persisted to the database to track engagement  and completion status before allowing users to proceed to surveys.`}
               VisualComponent={
-                <iframe
-                  style={{ width: "100%" }}
-                  height="415"
+                <IframeWrapper
                   src="https://www.youtube.com/embed/lOpW--VTrX0"
                   title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullscreen
-                ></iframe>
+                />
               }
               links={["http://www.link2you.org/"]}
             />
             <ProjectDisplay
               skills={[
-                "React",
                 "React Native",
-                "Java Spring Boot",
-                "Git hooks",
-                "AWS S3",
-                "AWS MariaDB",
-                "Amazon Linux2",
+                "Redux",
+                "Redux Thunk",
+                "UI Component Engineering",
+                "Interactive UI"
               ]}
               title="Updang"
-              desc="University students often face difficulties in obtaining loans from banks due to their lack of credit history. This project originated from the idea of exploring alternative approaches to credit evaluation for university students. This application gathers information on financial events and promotions available in the financial sector, specifically targeted towards university students. It also provides insights into which banks offer loans, the interest rates involved, and the maximum loan amounts that students can obtain. The application serves as a platform to empower university students by facilitating their access to financial resources and enhancing their understanding of available loan options."
+              desc={`Developed core UI components used across the application, aligned precisely with designer-provided specifications to ensure consistency and reusability. Implemented a calendar module by customizing an existing library to meet 
+                client-specific requirements. 
+                Built an interactive card-based module at the client’s request, featuring continuous rotation, pausing on user interaction, and automatically resuming rotation after a short delay once interaction ends. 
+                Established the frontend architecture using Redux and Redux Thunk, handling global state management and asynchronous data flows. 
+                This project is no longer actively maintained. The demo video showcases the implemented UI flows and interactions.`}
               VisualComponent={
-                <iframe
-                  style={{ width: "100%" }}
-                  height="415"
+                <IframeWrapper
                   src="https://www.youtube.com/embed/aHOPJZgTfRk"
                   title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
+                />
               }
               links={[
                 "https://play.google.com/store/apps/details?id=com.crepassplus.updang&hl=en&gl=US",
@@ -194,23 +194,19 @@ function App() {
             <ProjectDisplay
               title="Language adapter"
               skills={["React", "NodeJS", "PM2", "Express.js", "MariaDB"]}
-              desc="The Language Adapter Project originated from my personal journey of learning English. During conversations, I often found myself struggling to express my thoughts using English phrases, resorting to Korean-style expressions instead. Realizing the need to bridge this gap, I embarked on this project to develop a comprehensive solution."
+              desc={`The Language Adapter Project originated from my personal journey of learning English. 
+              During conversations, I often found myself struggling to express my thoughts using English phrases, 
+              resorting to Korean-style expressions instead. 
+              Realizing the need to bridge this gap, I embarked on this project to develop a comprehensive solution.`}
               VisualComponent={
                 <div className="vimeo__wrapper">
-                  <iframe
+                  <IframeWrapper
                     src="https://player.vimeo.com/video/823845422?h=6531fc52d4&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                     frameBborder="0"
                     allow="autoplay; fullscreen; picture-in-picture"
                     allowFullScreen
-                    style={{
-                      position: "absolute",
-                      top: "0",
-                      left: "0",
-                      width: "100%",
-                      height: "100%",
-                    }}
                     title="langauge_adapter"
-                  ></iframe>
+                  />
                 </div>
               }
               links={[
@@ -220,40 +216,35 @@ function App() {
             />
             <TextDevider label="Interactive Projects" />
             <ProjectDisplay
+              title="Pixelizing interaction"
               VisualComponent={
-                <iframe
-                  height="415"
-                  style={{ width: "100%" }}
-                  title="pixelizing"
+                <IframeWrapper
                   src="https://codepen.io/idjjm92/embed/preview/VwdgpMj?default-tab=&theme-id=dark"
-                  loading="lazy"
-                  allowtransparency="true"
-                >
-                  See the Pen{" "}
-                  <a href="https://codepen.io/idjjm92/pen/VwdgpMj">pixelizing</a>{" "}
-                  by jimmy jung (<a href="https://codepen.io/idjjm92">@idjjm92</a>
-                  ) on <a href="https://codepen.io">CodePen</a>.
-                </iframe>
+                  title="pixelizing"
+                />
               }
+              desc={`Inspired by visual experiments I saw in online videos, I rebuilt this pixelizing interaction from scratch to understand the underlying rendering and timing mechanics. 
+                The project renders text to a canvas, converts the pixels into particles using getImageData, and applies simple force, friction, and easing so particles react to mouse movement and then settle back into their original positions. 
+                The goal was to explore pixel-data processing, particle systems, and basic physics-driven motion—not to replicate a predefined effect.`}
+              links={[
+                "https://codepen.io/idjjm92/pen/VwdgpMj",
+              ]}
             />
             <ProjectDisplay
+              title="Matrix code rain effect"
               VisualComponent={
-                <iframe
+                <IframeWrapper
                   height="415"
                   style={{ width: "100%" }}
                   title="matrix code rain"
                   src="https://codepen.io/idjjm92/embed/preview/QWxvxZB?default-tab=&theme-id=dark"
-                  loading="lazy"
-                  allowtransparency="true"
-                >
-                  See the Pen{" "}
-                  <a href="https://codepen.io/idjjm92/pen/QWxvxZB">
-                    matrix code rain
-                  </a>{" "}
-                  by jimmy jung (<a href="https://codepen.io/idjjm92">@idjjm92</a>
-                  ) on <a href="https://codepen.io">CodePen</a>.
-                </iframe>
+                />
               }
+              desc={`As a long-time fan of The Matrix, I wanted to understand how its iconic “code rain” effect could be implemented programmatically. 
+                I built this project from scratch as a focused experiment in canvas rendering, animation timing, and pseudo-random character generation, with an emphasis on clear structure and performance rather than visual polish.`}
+              links={[
+                "https://codepen.io/idjjm92/pen/QWxvxZB",
+              ]}
             />
           </div>
         </Container>

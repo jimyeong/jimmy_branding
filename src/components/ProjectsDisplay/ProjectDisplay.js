@@ -19,14 +19,24 @@ const ProjectDisplayBlock = styled.div`
     font-size: 24px;
     font-weight: 600;
     color: #1a1a1a;
-    margin: 20px 0 12px 0;
+    margin: 20px 0 16px 0;
+    letter-spacing: -0.3px;
   }
 
-  > p {
+  .description {
     font-size: 16px;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 24px;
+    white-space: pre-line;
+
+    p {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .skills__container {
@@ -86,11 +96,28 @@ function ProjectDisplay({
   // Support both old VisualComponent prop and new media array prop
   const mediaItems = media.length > 0 ? media : (VisualComponent ? [VisualComponent] : []);
 
+  // Format description with proper line breaks
+  const formatDescription = (text) => {
+    if (!text) return null;
+
+    // Split by double line breaks for paragraphs, or single line breaks
+    const paragraphs = text.split(/\n\n+/).filter(p => p.trim());
+
+    if (paragraphs.length > 1) {
+      return paragraphs.map((para, idx) => (
+        <p key={idx}>{para.trim()}</p>
+      ));
+    }
+
+    // If no double line breaks, just use the text as-is with preserved line breaks
+    return <p>{text.trim()}</p>;
+  };
+
   return (
     <ProjectDisplayBlock>
       {mediaItems.length > 0 && <MediaCarousel media={mediaItems} />}
       {title && <h3>{title}</h3>}
-      {desc && <p>{desc}</p>}
+      {desc && <p className="description">{formatDescription(desc)}</p>}
       {skills.length > 0 && (
         <div className="skills__container">
           <span className="skills_label">Skills: </span>

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import tileImg from "../assets/imgs/green_bg_pt.png";
 
 const GlobalStyle = createGlobalStyle`
     html, body, div, span, applet, object, iframe,
@@ -52,6 +53,11 @@ const GlobalStyle = createGlobalStyle`
             sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        background-color: #ffffff;
+        background-image: url(${tileImg});
+        background-repeat: repeat;
+        background-blend-mode: hard-light;
+        background-size: 20px;
     }
     img{
         width: 100%;
@@ -70,6 +76,7 @@ const GlobalStyle = createGlobalStyle`
     .slick-dots li button:before {
         font-size: 12px !important;
     }
+    
 `;
 
 export default GlobalStyle;
