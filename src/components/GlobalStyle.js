@@ -45,10 +45,20 @@ const GlobalStyle = createGlobalStyle`
         border-spacing: 0;
     }
     body{
-        padding-top:16px;
+        padding: 32px 0;
+        background: #f5f7fa;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+            sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
     img{
         width: 100%;
+        display: block;
+    }
+    * {
+        box-sizing: border-box;
     }
 `;
 

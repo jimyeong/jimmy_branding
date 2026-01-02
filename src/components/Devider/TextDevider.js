@@ -2,34 +2,43 @@ import React from "react";
 import styled from "styled-components";
 
 const TextDeviderBlock = styled.div`
-  font-size: 24px;
-  margin-top: 16px;
-  font-family: "DotGothic16", sans-serif;
-  position: relative;
-  background: white;
+  margin: 64px 0 32px 0;
 
-  &:after {
-    position: absolute;
-    left: 260px;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    height: 2px;
-    background-color: #333;
-    z-index: 0;
+  h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-    content: "";
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 32px;
+      background: linear-gradient(180deg, #0066cc 0%, #0052a3 100%);
+      border-radius: 2px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin: 48px 0 24px 0;
+
+    h3 {
+      font-size: 26px;
+
+      &:before {
+        height: 26px;
+      }
+    }
   }
 `;
 
-function TextDevider({ children, label, textSymbol }) {
+function TextDevider({ label }) {
   return (
     <TextDeviderBlock>
-      <h3>
-        <span>{textSymbol}</span>
-        <span> </span>
-        <span>{label}</span>
-      </h3>
+      <h3>{label}</h3>
     </TextDeviderBlock>
   );
 }
